@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      (function() {
+        try {
+          var _origFetch = window.fetch;
+          var _boundFetch = _origFetch ? _origFetch.bind(window) : null;
+          var _currentFetch = _boundFetch;
+          Object.defineProperty(window, 'fetch', {
+            get: function() {
+              return _currentFetch;
+            },
+            set: function(val) {
+              _currentFetch = (typeof val === 'function') ? val.bind(window) : val;
+            },
+            configurable: true,
+            enumerable: true
+          });
+        } catch (e) {}
+      })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PrepLens - MoSPI Assessment Portal</title>
+    <meta name="description" content="AI-Driven Competency Mapping & Automated Assessment Engine for iGOT Karmayogi (SIH26101 - Smart India Hackathon 2026)." />
+    <meta property="og:title" content="PrepLens - MoSPI Assessment Portal" />
+    <meta property="og:description" content="AI-Driven Competency Mapping & Automated Assessment Engine for iGOT Karmayogi (SIH26101 - Smart India Hackathon 2026)." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  </head>
+  <body class="bg-[#f8fafc] text-[#0f172a] antialiased">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

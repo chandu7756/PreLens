@@ -1,0 +1,8 @@
+{
+  "name": "PrepLens - MoSPI Assessment Portal",
+  "description": "AI-Driven Competency Mapping & Automated Assessment Engine for iGOT Karmayogi (SIH26101 - Smart India Hackathon 2026).",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
